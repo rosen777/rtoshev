@@ -1,12 +1,11 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Portfolio from './pages/Portfolio';
-import Resume from './pages/Resume';
-import GetInTouch from './pages/GetInTouch';
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
-
+import React from "react";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Portfolio from "./pages/Portfolio";
+import Resume from "./pages/Resume";
+import GetInTouch from "./pages/GetInTouch";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
@@ -20,6 +19,6 @@ const App = () => {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

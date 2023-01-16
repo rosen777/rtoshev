@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import {Link} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const pages = ["/", "portfolio", "resume", "getintouch"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -28,6 +29,7 @@ const Navbar = () => {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
+  
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };

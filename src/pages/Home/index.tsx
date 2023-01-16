@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 import { styled } from "@mui/material/styles";
 import MaterialButton from "@mui/material/Button";
-import {buttonVariants} from '../../components/types';
-import { useNavigate } from 'react-router-dom';
+import { buttonVariants } from "../../components/types";
+import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import CardContent from "@mui/material/CardContent";
+import styles from "./style.module.css";
+import { ImageSlider } from "../../components/ImageSlider";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -17,26 +22,25 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const Home = () => {
   const navigate = useNavigate();
+  const slides = [
+    { url: "/assets/slider_placeholder.jpg", title: "Beach" },
+    { url: "/assets/slider_placeholder_2.png", title: "Beach" },
+    { url: "/assets/slider_placeholder.jpg", title: "Beach" },
+    { url: "/assets/slider_placeholder_2.png", title: "Beach" },
+  ];
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <div>Home</div>
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
-          <img alt="logo" src="logo512.png" width="512" height="512" />
-          <Item>Item #1</Item>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <Item>Item #2</Item>
-        </Grid>
-      </Grid>
-      <MaterialButton
+      <div>
+        <ImageSlider slides={slides} />
+      </div>
+      {/* <MaterialButton
         variant={buttonVariants.contained}
-        onClick={() => navigate("/portfolio")}
-      >
+        onClick={() => navigate("/portfolio")}>
         My Portfolio
-      </MaterialButton>
+      </MaterialButton> */}
     </Box>
   );
-}
+};
 
-export default Home
+export default Home;
