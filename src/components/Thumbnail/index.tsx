@@ -21,7 +21,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
 
   return (
     <Image
-      alt="primary image"
+      alt="thumbnail image"
       src={imageUrl}
       thumbnail={true}
       className="thumbnail"

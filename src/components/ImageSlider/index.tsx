@@ -1,4 +1,11 @@
-import { useState } from "react";
+import {
+  useState,
+  useEffect,
+  useCallback,
+  ChangeEvent,
+  MouseEvent,
+  MouseEventHandler,
+} from "react";
 import { MainImage } from "../MainImage";
 import { Thumbnail } from "../Thumbnail";
 import "./ImageSlider.css";
@@ -12,7 +19,7 @@ type ImageSliderProps = {
 
 export const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedThumbnail, setSelectedThumbnail] = useState(false);
+  const [slideChange, setSlideChange] = useState(true);
 
   const dotsContainerStyles = {
     display: "flex",
@@ -41,6 +48,24 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
     setCurrentIndex(slideIndex);
   };
 
+  const handleSlideChangeInterval = (
+    event: MouseEvent<HTMLElement>,
+    isChanged: any
+  ) => {
+    setSlideChange(isChanged);
+  };
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval>;
+    if (slideChange) {
+      interval = setInterval(() => {
+        goToNext();
+      }, 4000);
+    }
+
+    return () => clearInterval(interval);
+  }, [slideChange, goToNext]);
+
   return (
     <div>
       <div
@@ -51,7 +76,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
           left: "32px",
           fontSize: "45px",
           zIndex: 1,
-          color: currentIndex === 1 ? "#2D3849" : "#fff",
+          color: currentIndex === 1 || currentIndex === 3 ? "#2D3849" : "#fff",
           cursor: "pointer",
         }}
         onClick={goToPrevious}>
@@ -64,12 +89,33 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ slides }) => {
           transform: "translate(0, -50%)",
           right: "32px",
           fontSize: "45px",
-          color: currentIndex === 1 ? "#2D3849" : "#fff",
+          color: currentIndex === 1 || currentIndex === 3 ? "#2D3849" : "#fff",
           zIndex: 1,
           cursor: "pointer",
         }}
         onClick={goToNext}>
         ❱
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          right: "32px",
+          transform: "translate(0, -50%)",
+          fontSize: "45px",
+          color: currentIndex === 1 || currentIndex === 3 ? "#2D3849" : "#fff",
+          zIndex: 1,
+          cursor: "pointer",
+        }}>
+        <i
+          onClick={(e) => handleSlideChangeInterval(e, !slideChange)}
+          className={slideChange ? "fa fa-pause" : "fa fa-play"}
+          style={{
+            fontSize: 24,
+            color:
+              currentIndex === 1 || currentIndex === 3 ? "#2D3849" : "#fff",
+          }}
+        />
       </div>
       <MainImage imageUrl={slides[currentIndex].url} />
       <div className="thumbnailWrapper">

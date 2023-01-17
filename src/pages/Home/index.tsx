@@ -39,6 +39,9 @@ const Home = () => {
         onClick={() => navigate("/portfolio")}>
         My Portfolio
       </MaterialButton> */}
+      <div>
+        <Card />
+      </div>
     </Box>
   );
 };
