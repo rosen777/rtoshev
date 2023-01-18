@@ -1,0 +1,40 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  grid-template-areas: "sectionImage" "content";
+  margin-top: 2em;
+}
+
+.sectionImage {
+  grid-area: "sectionImage";
+  width: 100vw;
+  margin-top: 2em;
+}
+
+.content {
+  grid-area: "content";
+  font-size: 18px;
+}
+
+@media (width >= 600px) {
+  .wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr;
+    gap: 1em;
+    grid-template-areas: "image content";
+    margin: 8em 2em;
+  }
+  .sectionImage {
+    grid-area: "sectionImage";
+    max-width: 400px;
+    margin-top: 2em;
+  }
+  .content {
+    grid-area: "content";
+    font-size: 18px;
+    align-self: center;
+  }
+}

@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import styles from "./style.module.css";
 import { ImageSlider } from "../../components/ImageSlider";
+import { ImageSection } from "../../components/ImageSection";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -40,7 +41,7 @@ const Home = () => {
         My Portfolio
       </MaterialButton> */}
       <div>
-        <Card />
+        <ImageSection />
       </div>
     </Box>
   );
