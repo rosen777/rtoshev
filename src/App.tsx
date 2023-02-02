@@ -6,6 +6,7 @@ import Resume from "./pages/Resume";
 import GetInTouch from "./pages/GetInTouch";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+// import { ThemeProvider } from "./ThemeContext";
 
 const App = () => {
   return (

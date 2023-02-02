@@ -1,0 +1,16 @@
+.container {
+  margin-top: 20px;
+  position: static;
+}
+.wrapper {
+  position: relative;
+}
+.card_1 {
+  margin-bottom: 20px;
+}
+.card_2 {
+  margin-bottom: 20px;
+}
+.accordion_container {
+  margin-right: 32px;
+}
