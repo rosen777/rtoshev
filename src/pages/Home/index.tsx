@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import styles from "./style.module.css";
@@ -15,6 +14,7 @@ import { ImageSection } from "../../components/ImageSection";
 import { Accordion } from "../../components/Accordion";
 import { portfolioData } from "../../utils/portfolioData";
 import "./Home.css";
+import { Card } from "../../components/Cards";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -50,6 +50,9 @@ const Home = () => {
       </div>
       <div className="accordion_container">
         <Accordion data={portfolioData} />
+      </div>
+      <div>
+        <Card />
       </div>
     </Box>
   );
