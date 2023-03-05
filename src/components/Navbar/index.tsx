@@ -194,6 +194,9 @@ const Navbar = () => {
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 textDecoration: "none",
+                color: darkMode
+                  ? darkTheme.palette.secondary.main
+                  : lightTheme.palette.secondary.main,
               }}>
               LOGO
             </Typography>

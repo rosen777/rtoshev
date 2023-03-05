@@ -1,6 +1,8 @@
 import React, { useState, useEffect, MouseEventHandler } from "react";
 import Image from "react-bootstrap/Image";
 import "./Thumbnail.css";
+import { useDarkMode } from "../../ThemeHandler";
+import { darkTheme, lightTheme } from "../../styles/Theme";
 
 type ThumbnailProps = {
   imageUrl: string;
@@ -18,6 +20,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
   const selectImage = () => {
     handleSelectedSlide(index);
   };
+  const { darkMode } = useDarkMode();
 
   return (
     <Image
@@ -27,8 +30,13 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
       className="thumbnail"
       onClick={() => selectImage()}
       style={{
-        borderWidth: currentIndex === index ? 1 : 0,
-        borderColor: currentIndex === index ? "#2d3849" : "transparent",
+        borderWidth: currentIndex === index ? 2 : 0,
+        borderColor:
+          currentIndex === index && !darkMode
+            ? lightTheme.palette.info.main
+            : currentIndex === index && darkMode
+            ? darkTheme.palette.info.main
+            : "transparent",
       }}
     />
   );

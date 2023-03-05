@@ -15,6 +15,8 @@ import { Accordion } from "../../components/Accordion";
 import { portfolioData } from "../../utils/portfolioData";
 import "./Home.css";
 import { Card } from "../../components/Cards";
+import { useDarkMode } from "../../ThemeHandler";
+import { darkTheme, lightTheme } from "../../styles/Theme";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -27,6 +29,8 @@ import { Card } from "../../components/Cards";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { darkMode } = useDarkMode();
+
   // const { theme, setTheme } = useTheme();
   const slides = [
     { url: "/assets/slider_placeholder.jpg", title: "Beach" },
@@ -36,15 +40,19 @@ const Home = () => {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+      }}
+      style={{
+        width: "100%",
+        backgroundColor: darkMode
+          ? darkTheme.palette.primary.main
+          : lightTheme.palette.primary.main,
+      }}>
       <div>
         <ImageSlider slides={slides} />
       </div>
-      {/* <MaterialButton
-        variant={buttonVariants.contained}
-        onClick={() => navigate("/portfolio")}>
-        My Portfolio
-      </MaterialButton> */}
       <div>
         <ImageSection />
       </div>
