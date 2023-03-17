@@ -17,6 +17,7 @@ import "./Home.css";
 import { Card } from "../../components/Cards";
 import { useDarkMode } from "../../ThemeHandler";
 import { darkTheme, lightTheme } from "../../styles/Theme";
+import { Tabs } from "../../components/Tabs";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -58,6 +59,15 @@ const Home = () => {
       </div>
       <div className="accordion_container">
         <Accordion data={portfolioData} />
+      </div>
+      <div>
+        <Tabs
+          title="Portfolio Tabs"
+          tabs={[
+            { name: "Tab1", content: "Tab1" },
+            { name: "Tab2", content: "Tab2" },
+          ]}
+        />
       </div>
       <div>
         <Card />

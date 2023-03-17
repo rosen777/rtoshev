@@ -94,7 +94,7 @@ const Navbar = () => {
             right: 5,
             width: 16,
             height: 16,
-            color: "#2D3849",
+            color: darkMode ? "#FFF" : "#2D3849",
           }}
         />
       ),
@@ -108,7 +108,7 @@ const Navbar = () => {
             right: 5,
             width: 16,
             height: 16,
-            color: "#2D3849",
+            color: darkMode ? "#FFF" : "#2D3849",
           }}
         />
       ),
