@@ -1,11 +1,14 @@
 import Image from "react-bootstrap/Image";
 import "./ImageSection.css";
-import { ThemeLayout } from "../../ThemeLayout";
 import { darkTheme, lightTheme } from "../../styles/Theme";
 import { useDarkMode } from "../../ThemeHandler";
 
-export const ImageSection = () => {
-  const { darkMode, setDarkMode } = useDarkMode();
+type ImageSectionProps = {
+  sectionDescription: string;
+};
+
+export const ImageSection = ({ sectionDescription }: ImageSectionProps) => {
+  const { darkMode } = useDarkMode();
 
   return (
     <div
@@ -30,7 +33,7 @@ export const ImageSection = () => {
             ? darkTheme.palette.secondary.main
             : lightTheme.palette.secondary.main,
         }}>
-        Lorem ipsum dolor sit amet, consectetur adipis
+        {sectionDescription}
       </div>
     </div>
   );

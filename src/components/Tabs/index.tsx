@@ -1,12 +1,17 @@
 import { useState } from "react";
 import "./Tabs.css";
 
-type TabsProps = {
-  title: string;
-  tabs: any;
+type TabType = {
+  name: string;
+  content: string;
 };
 
-export const Tabs = ({ title, tabs = {} }: TabsProps) => {
+type TabsProps = {
+  title: string;
+  tabs: TabType[];
+};
+
+export const Tabs = ({ title, tabs }: TabsProps) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   const activateTab = (index: number) => {
@@ -21,7 +26,7 @@ export const Tabs = ({ title, tabs = {} }: TabsProps) => {
       ) : (
         <div>
           <div className="tabs">
-            {tabs.map((tab, index) => (
+            {tabs.map((tab: TabType, index: number) => (
               <label
                 key={index}
                 className={index === activeTabIndex ? "active-tab" : "tab"}

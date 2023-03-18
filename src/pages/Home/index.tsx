@@ -77,7 +77,9 @@ const Home = () => {
         <ImageSlider slides={slides} />
       </div>
       <div>
-        <ImageSection />
+        <ImageSection
+          sectionDescription={"Lorem ipsum dolor sit amet, consectetur adipis"}
+        />
       </div>
       <div className="accordion_container">
         <Accordion data={portfolioData} />
