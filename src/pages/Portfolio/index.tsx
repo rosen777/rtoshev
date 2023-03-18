@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-const Portfolio = () => {
+export const Portfolio = () => {
   return (
-    <div>Portfolio</div>
-  )
-}
-
-export default Portfolio
+    <div className="portfolio">
+      <div>Portfolio</div>
+    </div>
+  );
+};

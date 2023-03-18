@@ -1,9 +1,13 @@
 .title {
   font-family: "Waukegan-Bold";
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .description {
   font-family: "Waukegan";
-  font-size: 24px;
+  font-size: 18px;
+}
+
+.grid-container {
+  margin-bottom: 1em;
 }

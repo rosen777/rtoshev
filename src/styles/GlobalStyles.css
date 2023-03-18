@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.container,
+.footer-container {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}

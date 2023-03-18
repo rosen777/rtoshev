@@ -19,6 +19,7 @@ import { useDarkMode } from "../../ThemeHandler";
 import { darkTheme, lightTheme } from "../../styles/Theme";
 import { Tabs } from "../../components/Tabs";
 import { GridSection } from "../../components/GridSection";
+import { Footer } from "../../components/Footer";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -94,7 +95,7 @@ const Home = () => {
         <GridSection gridData={gridData} />
       </div>
       <div>
-        <Card />
+        <Footer />
       </div>
     </Box>
   );
