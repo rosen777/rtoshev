@@ -1,18 +1,22 @@
-import React from "react";
 import { Grid } from "@mui/material";
+import "./GridSection.css";
 
-export const GridSection = () => {
+type GridSectionProps = {
+  gridData: {
+    title: string;
+    description: string;
+  }[];
+};
+
+export const GridSection = ({ gridData }: GridSectionProps) => {
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={4}>
-        Title 1
-      </Grid>
-      <Grid item xs={4}>
-        Title 2
-      </Grid>
-      <Grid item xs={4}>
-        Title 3
-      </Grid>
+    <Grid container spacing={2} className="container">
+      {gridData.map((grid) => (
+        <Grid item xs={12} sm={6} md={4}>
+          <div className="title">{grid.title}</div>
+          <div className="description">{grid.description}</div>
+        </Grid>
+      ))}
     </Grid>
   );
 };

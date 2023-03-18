@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "Waukegan";
+  src: local("WaukeganLDO"), url("./fonts/WaukeganLDO.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Waukegan-Bold";
+  src: local("WaukeganLDOBold"),
+    url("./fonts/WaukeganLDOBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Waukegan-ExtendedBold";
+  src: local("WaukeganLDOExtendedBold"),
+    url("./fonts/WaukeganLDOExtendedBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Waukegan-Black";
+  src: local("WaukeganLDOBlack"),
+    url("./fonts/WaukeganLDOBlack.ttf") format("truetype");
+}

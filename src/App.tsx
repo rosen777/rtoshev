@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
@@ -8,6 +7,10 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import { DarkModeProvider } from "./ThemeHandler";
 import { ThemeLayout } from "./ThemeLayout";
+import "./fonts/WaukeganLDO.ttf";
+import "./fonts/WaukeganLDOBold.ttf";
+import "./fonts/WaukeganLDOExtendedBold.ttf";
+import "./fonts/WaukeganLDOBlack.ttf";
 
 const App = () => {
   return (

@@ -18,6 +18,7 @@ import { Card } from "../../components/Cards";
 import { useDarkMode } from "../../ThemeHandler";
 import { darkTheme, lightTheme } from "../../styles/Theme";
 import { Tabs } from "../../components/Tabs";
+import { GridSection } from "../../components/GridSection";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -27,6 +28,11 @@ import { Tabs } from "../../components/Tabs";
 //   textAlign: "center",
 //   color: theme.palette.text.secondary,
 // }));
+
+type gridDataType = {
+  title: string;
+  description: string;
+}[];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,6 +44,21 @@ const Home = () => {
     { url: "/assets/slider_placeholder_2.png", title: "Beach" },
     { url: "/assets/slider_placeholder.jpg", title: "Beach" },
     { url: "/assets/slider_placeholder_2.png", title: "Beach" },
+  ];
+
+  const gridData: gridDataType = [
+    {
+      title: "Title #1",
+      description: "Description #1",
+    },
+    {
+      title: "Title #2",
+      description: "Description #2",
+    },
+    {
+      title: "Title #3",
+      description: "Description #3",
+    },
   ];
 
   return (
@@ -68,6 +89,9 @@ const Home = () => {
             { name: "Tab2", content: "Tab2" },
           ]}
         />
+      </div>
+      <div>
+        <GridSection gridData={gridData} />
       </div>
       <div>
         <Card />

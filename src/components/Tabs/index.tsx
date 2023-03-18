@@ -9,7 +9,7 @@ type TabsProps = {
 export const Tabs = ({ title, tabs = {} }: TabsProps) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
-  const activateTab = (index) => {
+  const activateTab = (index: number) => {
     setActiveTabIndex(index);
   };
 
