@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import MaterialButton from "@mui/material/Button";
 import { buttonVariants } from "../../components/types";
@@ -14,12 +14,15 @@ import { ImageSection } from "../../components/ImageSection";
 import { Accordion } from "../../components/Accordion";
 import { portfolioData } from "../../utils/portfolioData";
 import "./Home.css";
-import { Card } from "../../components/Cards";
 import { useDarkMode } from "../../ThemeHandler";
 import { darkTheme, lightTheme } from "../../styles/Theme";
 import { Tabs } from "../../components/Tabs";
 import { GridSection } from "../../components/GridSection";
 import { Footer } from "../../components/Footer";
+import { FormInput } from "../../components/FormInput";
+import { Form, Formik, FormikProps } from "formik";
+import { object, string, number, date, InferType } from "yup";
+import { Button } from "../../components/Button";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -35,9 +38,23 @@ type gridDataType = {
   description: string;
 }[];
 
+type Values = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
 const Home = () => {
   const navigate = useNavigate();
   const { darkMode } = useDarkMode();
+  const initialValues = {
+    email: "",
+    firstName: "",
+    lastName: "",
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // const { theme, setTheme } = useTheme();
   const slides = [
@@ -61,6 +78,20 @@ const Home = () => {
       description: "Description #3",
     },
   ];
+
+  const contactFormSchema = object({
+    firstName: string()
+      .min(2, "First name must be at least 2 characters")
+      .required(),
+    lastName: string()
+      .min(2, "Last name must be at least 2 characters")
+      .required(),
+    email: string().email(),
+  });
+
+  const submitContactForm = (values: any) => {
+    console.log(values);
+  };
 
   return (
     <Box
@@ -95,6 +126,38 @@ const Home = () => {
       </div>
       <div>
         <GridSection gridData={gridData} />
+      </div>
+      <div className="contact-form">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={contactFormSchema}
+          onSubmit={(values, actions) => {
+            submitContactForm(values);
+          }}>
+          {(props: FormikProps<Values>) => (
+            <Form>
+              <FormInput
+                label="First Name"
+                placeholder="Enter your email address"
+                name="firstName"
+              />
+              <FormInput
+                label="Last Name"
+                placeholder="Enter your last name"
+                name="lastName"
+              />
+              <FormInput
+                label="Email"
+                placeholder="Enter your email address"
+                name="email"
+                type="email"
+              />
+              <div className="submit-btn">
+                <Button type="submit" text="Submit" color="info" />
+              </div>
+            </Form>
+          )}
+        </Formik>
       </div>
       <div>
         <Footer />

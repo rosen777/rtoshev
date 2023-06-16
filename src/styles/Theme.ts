@@ -27,7 +27,7 @@ const darkTheme = createTheme({
       main: "#fff",
     },
     info: {
-      main: "#ff6d91",
+      main: "#008593",
       dark: "#ff6d91",
     },
   },

@@ -14,3 +14,15 @@
 .accordion_container {
   margin-right: 32px;
 }
+.submit-btn {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+@media (min-width: 800px) {
+  .submit-btn {
+    position: relative;
+    left: 100px;
+  }
+}

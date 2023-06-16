@@ -1,0 +1,62 @@
+.label {
+  font-family: "Waukegan";
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: 10vw;
+}
+
+.input {
+  width: 70vw;
+  position: relative;
+  left: 5vw;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 800px) {
+  .input-container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .input-field {
+    left: 100px;
+    position: absolute;
+    min-width: 80vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .input-container {
+    display: flex;
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .label-text {
+    display: flex;
+    flex: 1;
+  }
+
+  .input-field {
+    display: flex;
+    flex: 1;
+  }
+}

@@ -57,7 +57,7 @@ export const GridSection = ({ gridData }: GridSectionProps) => {
 
   useEffect(() => {
     calculateGridSizes();
-  }, [calculateGridSizes, gridSizes]);
+  }, [calculateGridSizes]);
 
   return (
     <Grid container spacing={2} className="grid-container">
