@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 const GetInTouch = () => {
   return (
-    <div>GetInTouch</div>
-  )
-}
+    <div>
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+      </div>
+    </div>
+  );
+};
 
 export default GetInTouch;

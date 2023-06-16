@@ -55,6 +55,7 @@ const Home = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [inputRows, setInputRows] = useState(1);
 
   // const { theme, setTheme } = useTheme();
   const slides = [
@@ -137,20 +138,21 @@ const Home = () => {
           {(props: FormikProps<Values>) => (
             <Form>
               <FormInput
-                label="First Name"
+                label="Name"
                 placeholder="Enter your email address"
                 name="firstName"
-              />
-              <FormInput
-                label="Last Name"
-                placeholder="Enter your last name"
-                name="lastName"
               />
               <FormInput
                 label="Email"
                 placeholder="Enter your email address"
                 name="email"
                 type="email"
+              />
+              <FormInput
+                label="Message"
+                placeholder="Enter your message"
+                name="message"
+                multiline
               />
               <div className="submit-btn">
                 <Button type="submit" text="Submit" color="info" />
@@ -159,7 +161,7 @@ const Home = () => {
           )}
         </Formik>
       </div>
-      <div>
+      <div className="footer">
         <Footer />
       </div>
     </Box>

@@ -19,7 +19,7 @@
     flex: 1;
     position: relative;
     flex-direction: column;
-    margin: 0 20px;
+    margin: 0 40px;
   }
 
   .input-wrapper {
@@ -31,7 +31,7 @@
   .input-field {
     left: 100px;
     position: absolute;
-    min-width: 80vw;
+    min-width: 78vw;
   }
 }
 

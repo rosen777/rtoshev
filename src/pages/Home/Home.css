@@ -16,13 +16,21 @@
 }
 .submit-btn {
   display: flex;
-  margin-left: 20px;
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 @media (min-width: 800px) {
   .submit-btn {
     position: relative;
     left: 100px;
+    top: 80px;
+  }
+  .footer {
+    position: relative;
+    padding-top: 80px;
+  }
+  .submit-btn {
+    margin-left: 40px;
   }
 }

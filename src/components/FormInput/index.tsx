@@ -7,6 +7,9 @@ type InputProps = {
   name: string;
   label?: string;
   type?: string;
+  multiline?: boolean;
+  rows?: number;
+  cols?: number;
 };
 
 export const FormInput = ({
@@ -14,6 +17,9 @@ export const FormInput = ({
   placeholder,
   name,
   type = "text",
+  multiline,
+  rows = 5,
+  cols = 33,
   ...props
 }: InputProps) => {
   const [field, meta] = useField(name);
@@ -21,7 +27,16 @@ export const FormInput = ({
     <div className="input-container">
       <div className="input-wrapper">
         <label className="label-text">{label}</label>
-        <input className="input-field" type={type} {...field} {...props} />
+        {multiline ? (
+          <textarea
+            name={name}
+            className="input-field"
+            rows={rows}
+            cols={cols}
+          />
+        ) : (
+          <input className="input-field" type={type} {...field} {...props} />
+        )}
       </div>
       {meta.touched && meta.error ? (
         <div className="error-wrapper" role="alert">
