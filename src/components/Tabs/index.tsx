@@ -3,7 +3,7 @@ import "./Tabs.css";
 
 type TabType = {
   name: string;
-  content: string;
+  content: React.ReactElement;
 };
 
 type TabsProps = {

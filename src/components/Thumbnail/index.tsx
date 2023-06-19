@@ -35,7 +35,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
           currentIndex === index && !darkMode
             ? lightTheme.palette.info.main
             : currentIndex === index && darkMode
-            ? darkTheme.palette.info.main
+            ? darkTheme.palette.info.light
             : "transparent",
       }}
     />

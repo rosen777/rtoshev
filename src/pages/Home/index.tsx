@@ -23,6 +23,8 @@ import { FormInput } from "../../components/FormInput";
 import { Form, Formik, FormikProps } from "formik";
 import { object, string, number, date, InferType } from "yup";
 import { Button } from "../../components/Button";
+import { Chart } from "../../components/Chart";
+import { ChartDataPoint } from "global";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -80,6 +82,39 @@ const Home = () => {
     },
   ];
 
+  const chartData: ChartDataPoint[] = [
+    {
+      quarter: 1,
+      visitors: 2000000,
+      fill: "#61DAFB",
+      label: "⚛️",
+    },
+    {
+      quarter: 2,
+      visitors: 1500000,
+      fill: "#EC7211",
+      label: "AWS",
+    },
+    {
+      quarter: 3,
+      visitors: 1000000,
+      fill: "#79A643",
+      label: "🛒",
+    },
+    {
+      quarter: 4,
+      visitors: 400000,
+      fill: "#61DAFB",
+      label: "⚛️",
+    },
+    {
+      quarter: 5,
+      visitors: 200000,
+      fill: "#026E00",
+      label: "🥬",
+    },
+  ];
+
   const contactFormSchema = object({
     firstName: string()
       .min(2, "First name must be at least 2 characters")
@@ -120,8 +155,15 @@ const Home = () => {
         <Tabs
           title="Portfolio Tabs"
           tabs={[
-            { name: "Tab1", content: "Tab1" },
-            { name: "Tab2", content: "Tab2" },
+            {
+              name: "Tab1",
+              content: (
+                <div>
+                  <Chart data={chartData} />
+                </div>
+              ),
+            },
+            { name: "Tab2", content: <div>Tab 2</div> },
           ]}
         />
       </div>
