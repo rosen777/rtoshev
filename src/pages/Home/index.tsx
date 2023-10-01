@@ -46,6 +46,15 @@ type Values = {
   email: string;
 };
 
+type chartDataType = {
+  quarter: number;
+  visitors: number;
+  fill: string;
+  label: string;
+};
+
+type chartDataArrayType = chartDataType[];
+
 const Home = () => {
   const navigate = useNavigate();
   const { darkMode } = useDarkMode();
@@ -82,7 +91,7 @@ const Home = () => {
     },
   ];
 
-  const chartData: ChartDataPoint[] = [
+  const chartData: chartDataArrayType = [
     {
       quarter: 1,
       visitors: 2000000,
@@ -128,6 +137,8 @@ const Home = () => {
   const submitContactForm = (values: any) => {
     console.log(values);
   };
+
+  console.log(`chartData: ${JSON.stringify(chartData)}`);
 
   return (
     <Box

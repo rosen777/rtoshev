@@ -9,16 +9,22 @@ import {
 } from "victory";
 import { ChartDataPoint } from "global";
 
-export const Chart: React.FC = ({ data }: any) => {
+import { chartDataType, chartDataArrayType } from "./types";
+
+export const Chart: React.FC<any> = ({ data }) => {
+  console.log(`data: ${JSON.stringify(data)}`);
   // const barColors: string[] = ["#ff0000", "#00ff00", "#0000ff", "orange"];
   const [barColors, setBarColors] = useState([]);
 
-  const handleBarColors = (chartData) => {
+  const handleBarColors = (chartData: chartDataArrayType) => {
     if (chartData.length > 0) {
-      const barColorArray = chartData.reduce((acc, currValue, currIndex) => {
-        acc.push(currValue.fill);
-        return acc;
-      }, []);
+      const barColorArray: any = chartData.reduce(
+        (acc: string[], currValue, currIndex) => {
+          acc.push(currValue.fill);
+          return acc;
+        },
+        []
+      );
       setBarColors(barColorArray);
     }
   };
@@ -30,8 +36,6 @@ export const Chart: React.FC = ({ data }: any) => {
   useEffect(() => {
     handleBarColors(data);
   }, [data]);
-
-  console.log(`barColors: ${barColors}`);
 
   return (
     <VictoryChart theme={VictoryTheme.material} domainPadding={40} width={800}>
@@ -58,8 +62,7 @@ export const Chart: React.FC = ({ data }: any) => {
         y={(d) => d.visitors / 1000}
         style={{
           data: {
-            fill: ({ datum }: BarProps<ChartDataPoint>) =>
-              getBarColor(datum.quarter - 1),
+            fill: ({ datum }: BarProps) => getBarColor(datum.quarter - 1),
           },
         }}
         animate={{
