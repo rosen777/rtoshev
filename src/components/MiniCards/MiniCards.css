@@ -1,0 +1,16 @@
+.card-container {
+  margin: 25%;
+}
+
+.card-content {
+  display: flex;
+  flex: 1;
+}
+
+.card-media {
+}
+
+.card-action {
+  display: flex;
+  justify-content: center;
+}

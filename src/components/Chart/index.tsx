@@ -11,7 +11,7 @@ import { ChartDataPoint } from "global";
 
 import { chartDataType, chartDataArrayType } from "./types";
 
-export const Chart: React.FC<any> = ({ data }) => {
+export const Chart: React.FC<{ data: any }> = ({ data }) => {
   console.log(`data: ${JSON.stringify(data)}`);
   // const barColors: string[] = ["#ff0000", "#00ff00", "#0000ff", "orange"];
   const [barColors, setBarColors] = useState([]);

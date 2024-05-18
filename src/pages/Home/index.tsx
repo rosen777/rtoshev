@@ -24,7 +24,7 @@ import { Form, Formik, FormikProps } from "formik";
 import { object, string, number, date, InferType } from "yup";
 import { Button } from "../../components/Button";
 import { Chart } from "../../components/Chart";
-import { ChartDataPoint } from "global";
+import { MiniCards } from "../../components/MiniCards";
 // import useTheme, { themes } from "../../ThemeContext";
 
 // const Item = styled(Paper)(({ theme }) => ({
@@ -157,6 +157,13 @@ const Home = () => {
       <div>
         <ImageSection
           sectionDescription={"Lorem ipsum dolor sit amet, consectetur adipis"}
+        />
+      </div>
+      <div>
+        <MiniCards
+          title={"title"}
+          description={"description"}
+          actionText="action"
         />
       </div>
       <div className="accordion_container">

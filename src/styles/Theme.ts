@@ -34,8 +34,14 @@ const darkTheme = createTheme({
   },
   typography: {
     body1: {
+      main: "#fff",
       color: "#fff",
       backgroundColor: "#23272F",
+    },
+    body2: {
+      main: "#23272F",
+      color: "#23272F",
+      backgroundColor: "#fff",
     },
   },
   components: {
@@ -80,7 +86,12 @@ const lightTheme = createTheme({
   },
   typography: {
     body1: {
+      main: "#23272F",
       color: "#23272F",
+      backgroundColor: "#fff",
+    },
+    body2: {
+      main: "#23272F",
       backgroundColor: "#fff",
     },
   },

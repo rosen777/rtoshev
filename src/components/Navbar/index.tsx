@@ -259,7 +259,9 @@ const Navbar = () => {
                       index === 0 ? handleLightTheme() : handleDarkTheme();
                     }}>
                     {theme.icon}
-                    <Typography textAlign="center">{theme.title}</Typography>
+                    <Typography variant="body1" textAlign="center">
+                      {theme.title}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
