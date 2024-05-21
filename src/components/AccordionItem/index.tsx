@@ -1,4 +1,6 @@
 import { RefObject, useRef, useState } from "react";
+import "./AccordionItem.css";
+import { useDarkMode } from "src/ThemeHandler";
 
 type AccordionItemProps = {
   key: number;
@@ -16,6 +18,7 @@ export const AccordionItem: React.FunctionComponent<AccordionItemProps> = ({
   const [clicked, setClicked] = useState(false);
   const { question, answer } = data;
   const contentEl = useRef() as RefObject<HTMLDivElement>;
+  const { darkMode } = useDarkMode();
 
   const handleToggle = () => {
     setClicked((clicked) => !clicked);
@@ -35,7 +38,9 @@ export const AccordionItem: React.FunctionComponent<AccordionItemProps> = ({
             ? { height: contentEl?.current?.scrollHeight }
             : { height: "0px" }
         }>
-        <div className="answer">{answer}</div>
+        <div className={darkMode ? "answer-dark" : "answer-light"}>
+          {answer}
+        </div>
       </div>
     </li>
   );

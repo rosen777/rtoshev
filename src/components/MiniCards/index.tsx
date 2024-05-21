@@ -36,7 +36,9 @@ export const MiniCards = ({
           </CardContent>
         </CardActionArea>
         <CardActions className="card-action">
-          <Button size="small">{actionText}</Button>
+          <Button variant="action" size="small">
+            {actionText}
+          </Button>
         </CardActions>
       </Card>
     </div>

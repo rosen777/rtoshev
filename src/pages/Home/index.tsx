@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
-import MaterialButton from "@mui/material/Button";
-import { buttonVariants } from "../../components/types";
 import { useNavigate } from "react-router-dom";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import CardContent from "@mui/material/CardContent";
-import styles from "./style.module.css";
+import Grid from "@mui/material/Grid";
 import { ImageSlider } from "../../components/ImageSlider";
 import { ImageSection } from "../../components/ImageSection";
 import { Accordion } from "../../components/Accordion";
@@ -74,6 +67,24 @@ const Home = () => {
     { url: "/assets/slider_placeholder_2.png", title: "Beach" },
     { url: "/assets/slider_placeholder.jpg", title: "Beach" },
     { url: "/assets/slider_placeholder_2.png", title: "Beach" },
+  ];
+
+  const cardData = [
+    {
+      title: "title1",
+      description: "description1",
+      action: "action1",
+    },
+    {
+      title: "title2",
+      description: "description2",
+      action: "action2",
+    },
+    {
+      title: "title3",
+      description: "description3",
+      action: "action3",
+    },
   ];
 
   const gridData: gridDataType = [
@@ -159,13 +170,22 @@ const Home = () => {
           sectionDescription={"Lorem ipsum dolor sit amet, consectetur adipis"}
         />
       </div>
-      <div>
-        <MiniCards
-          title={"title"}
-          description={"description"}
-          actionText="action"
-        />
-      </div>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justifyContent="center"
+        alignItems="center">
+        {cardData.map((card, index) => (
+          <Grid item sm={12} md={4} lg={4}>
+            <MiniCards
+              title={card.title}
+              description={card.description}
+              actionText={card.action}
+            />
+          </Grid>
+        ))}
+      </Grid>
       <div className="accordion_container">
         <Accordion data={portfolioData} />
       </div>
@@ -215,7 +235,12 @@ const Home = () => {
                 multiline
               />
               <div className="submit-btn">
-                <Button type="submit" text="Submit" color="info" />
+                <Button
+                  type="submit"
+                  variant="accent"
+                  text="Submit"
+                  color="info"
+                />
               </div>
             </Form>
           )}

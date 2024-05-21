@@ -1,10 +1,16 @@
 import React from "react";
 import MaterialUIButton from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
+declare module "@mui/material/Button" {
+  interface ButtonPropsVariantOverrides {
+    action: true;
+    accent: true;
+  }
+}
 
 interface ButtonInterface
   extends React.ComponentProps<typeof MaterialUIButton> {
-  variant?: "text" | "contained" | "outlined";
+  variant?: "text" | "contained" | "outlined" | "accent" | "action";
   text?: string;
   onClick?: () => void;
   color?:
