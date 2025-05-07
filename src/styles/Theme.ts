@@ -98,6 +98,10 @@ const darkTheme = createTheme({
             backgroundColor: "#178593",
             color: "#fff",
             border: "4px solid #178593",
+            "&:hover": {
+              backgroundColor: "#202020",
+              color: "#fff",
+            },
           },
         },
         {
@@ -194,6 +198,10 @@ const lightTheme = createTheme({
             backgroundColor: "#178593",
             color: "#fff",
             border: "4px solid #178593",
+            "&:hover": {
+              backgroundColor: "#fff",
+              color: "#000",
+            },
           },
         },
         {

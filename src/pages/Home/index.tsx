@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ImageSlider } from "../../components/ImageSlider";
@@ -14,19 +13,10 @@ import { GridSection } from "../../components/GridSection";
 import { Footer } from "../../components/Footer";
 import { FormInput } from "../../components/FormInput";
 import { Form, Formik, FormikProps } from "formik";
-import { object, string, number, date, InferType } from "yup";
+import { object, string } from "yup";
 import { Button } from "../../components/Button";
 import { Chart } from "../../components/Chart";
 import { MiniCards } from "../../components/MiniCards";
-// import useTheme, { themes } from "../../ThemeContext";
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: "center",
-//   color: theme.palette.text.secondary,
-// }));
 
 type gridDataType = {
   title: string;
@@ -44,12 +34,12 @@ type chartDataType = {
   visitors: number;
   fill: string;
   label: string;
+  image: string;
 };
 
 type chartDataArrayType = chartDataType[];
 
 const Home = () => {
-  const navigate = useNavigate();
   const { darkMode } = useDarkMode();
   const initialValues = {
     email: "",
@@ -108,30 +98,35 @@ const Home = () => {
       visitors: 2000000,
       fill: "#61DAFB",
       label: "⚛️",
+      image: "/assets/react.svg",
     },
     {
       quarter: 2,
       visitors: 1500000,
       fill: "#EC7211",
       label: "AWS",
+      image: "/assets/aws.png",
     },
     {
       quarter: 3,
       visitors: 1000000,
       fill: "#79A643",
       label: "🛒",
+      image: "/assets/shopify.png",
     },
     {
       quarter: 4,
       visitors: 400000,
       fill: "#61DAFB",
       label: "⚛️",
+      image: "/assets/react.svg",
     },
     {
       quarter: 5,
       visitors: 200000,
       fill: "#026E00",
       label: "🥬",
+      image: "/assets/node.svg",
     },
   ];
 
@@ -177,7 +172,7 @@ const Home = () => {
         justifyContent="center"
         alignItems="center">
         {cardData.map((card, index) => (
-          <Grid item sm={12} md={4} lg={4}>
+          <Grid size={{ sm: 12, md: 4, lg: 4 }}>
             <MiniCards
               title={card.title}
               description={card.description}

@@ -62,7 +62,7 @@ export const GridSection = ({ gridData }: GridSectionProps) => {
   return (
     <Grid container spacing={2} className="grid-container">
       {gridData.map((grid) => (
-        <Grid item xs={gridSizes.xs} sm={gridSizes.sm} md={gridSizes.md}>
+        <Grid size={{xs: gridSizes.xs, sm: gridSizes.sm, md: gridSizes.md}}>
           <div className="title">{grid.title}</div>
           <div className="description">{grid.description}</div>
         </Grid>

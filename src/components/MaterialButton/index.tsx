@@ -1,9 +1,8 @@
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import Button from "@mui/material/Button";
 import { buttonVariants } from "../types";
 
 const MaterialButton = (variant = buttonVariants.contained) => {
-  return (<Button variant={variant} />);
+  return <Button variant={variant} />;
 };
 
 export default MaterialButton;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import {
   VictoryBar,
   VictoryChart,
@@ -7,9 +7,9 @@ import {
   BarProps,
   VictoryLabel,
 } from "victory";
-import { ChartDataPoint } from "global";
+import { ChartImage } from "../ChartImage";
 
-import { chartDataType, chartDataArrayType } from "./types";
+import { chartDataArrayType } from "./types";
 
 export const Chart: React.FC<{ data: any }> = ({ data }) => {
   console.log(`data: ${JSON.stringify(data)}`);
@@ -58,6 +58,7 @@ export const Chart: React.FC<{ data: any }> = ({ data }) => {
       />
       <VictoryBar
         data={data}
+        labelComponent={<ChartImage x={0} y={0} datum={data} />}
         x="quarter"
         y={(d) => d.visitors / 1000}
         style={{

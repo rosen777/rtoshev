@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import Portfolio from "./pages/Portfolio";
 import Resume from "./pages/Resume";
 import GetInTouch from "./pages/GetInTouch";
@@ -12,20 +12,39 @@ import "./fonts/WaukeganLDOBold.ttf";
 import "./fonts/WaukeganLDOExtendedBold.ttf";
 import "./fonts/WaukeganLDOBlack.ttf";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: () => (
+      <ThemeLayout>
+        <Navbar />
+      </ThemeLayout>
+    ),
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "portfolio",
+        Component: Portfolio,
+      },
+      {
+        path: "resume",
+        Component: Resume,
+      },
+      {
+        path: "getintouch",
+        Component: GetInTouch,
+      },
+    ],
+  },
+]);
+
 const App = () => {
   return (
     <DarkModeProvider>
-      <ThemeLayout>
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/getintouch" element={<GetInTouch />} />
-          </Routes>
-        </div>
-      </ThemeLayout>
+      <RouterProvider router={router} />
     </DarkModeProvider>
   );
 };

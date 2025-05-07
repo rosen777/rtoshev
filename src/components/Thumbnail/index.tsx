@@ -11,12 +11,12 @@ type ThumbnailProps = {
   handleSelectedSlide: any;
 };
 
-export const Thumbnail: React.FC<ThumbnailProps> = ({
+export const Thumbnail = ({
   imageUrl,
   index,
   currentIndex,
   handleSelectedSlide,
-}) => {
+}: ThumbnailProps) => {
   const selectImage = () => {
     handleSelectedSlide(index);
   };

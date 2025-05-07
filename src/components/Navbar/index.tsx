@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -169,7 +169,7 @@ const Navbar = () => {
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">
                       <Link
-                        to={`${page}`}
+                        to={`../${page}`}
                         style={{
                           textDecoration: "none",
                         }}>
@@ -295,6 +295,7 @@ const Navbar = () => {
           </Toolbar>
         </Container>
       </AppBar>
+      <Outlet />
     </ThemeLayout>
   );
 };

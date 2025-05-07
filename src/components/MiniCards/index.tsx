@@ -19,7 +19,7 @@ export const MiniCards = ({
 }): JSX.Element => {
   return (
     <div className="card-container">
-      <Card sx={{ maxWidth: 600 }}>
+      <Card>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -27,12 +27,8 @@ export const MiniCards = ({
             image={"assets/slider_placeholder.jpg"}
           />
           <CardContent>
-            <Typography variant="h3" gutterBottom>
-              {title}
-            </Typography>
-            <Typography variant="body2" sx={{ mb: 1.5 }}>
-              {description}
-            </Typography>
+            <Typography variant="h3">{title}</Typography>
+            <Typography variant="body2">{description}</Typography>
           </CardContent>
         </CardActionArea>
         <CardActions className="card-action">
