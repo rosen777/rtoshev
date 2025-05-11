@@ -1,0 +1,10 @@
+.sectionImage {
+  max-width: 500px !important;
+  margin-top: 2em;
+}
+.portfolio-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  margin: 40px;
+}

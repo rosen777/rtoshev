@@ -144,8 +144,6 @@ const Home = () => {
     console.log(values);
   };
 
-  console.log(`chartData: ${JSON.stringify(chartData)}`);
-
   return (
     <Box
       sx={{
