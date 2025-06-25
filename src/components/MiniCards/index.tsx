@@ -16,7 +16,7 @@ export const MiniCards = ({
   title: string;
   description: string;
   actionText: string;
-}): JSX.Element => {
+}) => {
   return (
     <div className="card-container">
       <Card>

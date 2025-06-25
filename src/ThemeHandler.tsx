@@ -2,7 +2,6 @@ import {
   createContext,
   JSXElementConstructor,
   ReactElement,
-  ReactFragment,
   ReactPortal,
   useReducer,
   useContext,
@@ -34,7 +33,6 @@ const DarkModeProvider = (props: {
     | number
     | boolean
     | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
     | ReactPortal
     | null
     | undefined

@@ -1,11 +1,4 @@
-import {
-  useState,
-  useEffect,
-  useCallback,
-  ChangeEvent,
-  MouseEvent,
-  MouseEventHandler,
-} from "react";
+import { useState, useEffect, MouseEvent } from "react";
 import { MainImage } from "../MainImage";
 import { Thumbnail } from "../Thumbnail";
 import "./ImageSlider.css";

@@ -17,7 +17,7 @@ export const AccordionItem: React.FunctionComponent<AccordionItemProps> = ({
 }) => {
   const [clicked, setClicked] = useState(false);
   const { question, answer } = data;
-  const contentEl = useRef() as RefObject<HTMLDivElement>;
+  const contentEl = useRef(null) as RefObject<HTMLDivElement | null>;
   const { darkMode } = useDarkMode();
 
   const handleToggle = () => {
