@@ -17,6 +17,7 @@ import { object, string } from "yup";
 import { Button } from "../../components/Button";
 import { Chart } from "../../components/Chart";
 import { MiniCards } from "../../components/MiniCards";
+import { LeafletMap } from "../../components/Maps/LeafletMap";
 
 type gridDataType = {
   title: string;
@@ -194,7 +195,7 @@ const Home = () => {
                 </div>
               ),
             },
-            { name: "Tab2", content: <div>Tab 2</div> },
+            { name: "Tab2", content: <LeafletMap /> },
           ]}
         />
       </div>

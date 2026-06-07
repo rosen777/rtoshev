@@ -1,0 +1,20 @@
+.leaflet-map-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.map-container {
+  display: flex;
+  flex-direction: row;
+}
+.leaflet-map {
+  height: calc(80vh - 10rem);
+  width: 100vw;
+}
+.tooltip-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
